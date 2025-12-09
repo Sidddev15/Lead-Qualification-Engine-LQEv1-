@@ -11,7 +11,8 @@
     "types": ["node", "react", "react-dom", "next"],
     "baseUrl": ".",
     "paths": {
-      "@lqe/types": ["packages/types/src"],
+      "@lqe/types": ["packages/types"],
+      "@lqe/types/*": ["packages/types/*"],
       "@lqe/utils": ["packages/utils/src"],
       "@lqe/config/*": ["config/lqe/*"]
     }

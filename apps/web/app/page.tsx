@@ -22,13 +22,13 @@ export default function HomePage() {
       </p>
 
       <Card className="p-6 bg-slate-900 border-slate-800">
-        <h2 className="text-xl font-semibold mb-4">
+        <h2 className="text-xl font-semibold mb-4 text-slate-300">
           Step 1 — Select Input Mode
         </h2>
 
         <div className="flex gap-2">
           <button
-            className={`px-4 py-2 rounded ${
+            className={`px-4 py-2 rounded text-slate-300 ${
               mode === "manual" ? "bg-blue-600" : "bg-slate-700"
             }`}
             onClick={() => setMode("manual")}
@@ -36,7 +36,7 @@ export default function HomePage() {
             Manual
           </button>
           <button
-            className={`px-4 py-2 rounded ${
+            className={`px-4 py-2 rounded text-slate-300 ${
               mode === "pdf_zip" ? "bg-blue-600" : "bg-slate-700"
             }`}
             onClick={() => setMode("pdf_zip")}
@@ -44,7 +44,7 @@ export default function HomePage() {
             PDF/ZIP
           </button>
           <button
-            className={`px-4 py-2 rounded ${
+            className={`px-4 py-2 rounded text-slate-300 ${
               mode === "excel" ? "bg-blue-600" : "bg-slate-700"
             }`}
             onClick={() => setMode("excel")}

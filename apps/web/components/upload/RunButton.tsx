@@ -40,6 +40,7 @@ export default function RunButton({
   return (
     <Button
       className="mt-4"
+      variant="outline"
       disabled={mutation.isPending}
       onClick={() => mutation.mutate()}
     >

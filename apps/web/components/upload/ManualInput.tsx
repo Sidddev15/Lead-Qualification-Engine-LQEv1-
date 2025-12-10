@@ -15,7 +15,7 @@ export default function ManualInput({ value, onChange }: Props) {
         Enter company names (comma or newline separated)
       </label>
       <Textarea
-        className="h-40 bg-slate-900 border-slate-700"
+        className="h-40 bg-slate-900 border-slate-700 text-slate-200"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

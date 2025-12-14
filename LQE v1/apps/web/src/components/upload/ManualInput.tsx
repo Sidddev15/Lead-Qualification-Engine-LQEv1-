@@ -11,10 +11,14 @@ interface Props {
 export default function ManualInput({ value, onChange }: Props) {
   return (
     <div className="my-4">
-      <label className="text-sm text-slate-300 mb-2 block">
+      <label
+        htmlFor="manualCompanies"
+        className="text-sm text-slate-300 mb-2 block"
+      >
         Enter company names (comma or newline separated)
       </label>
       <Textarea
+        id="manualCompanies"
         className="h-40 w-full resize-none bg-slate-900 border border-slate-100 rounded text-slate-200 p-2"
         value={value}
         onChange={(e) => onChange(e.target.value)}

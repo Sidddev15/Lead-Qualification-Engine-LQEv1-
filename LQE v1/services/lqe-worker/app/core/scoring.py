@@ -133,6 +133,7 @@ def compute_scores_from_enrichment(
     notes_parts = [
         f"Tier: {tier}",
         f"Industry relevance: {industry_relevance}",
+        f"Keyword relevance: {keyword_match}",
         f"Contact quality: {contact_quality} ({len(emails)} emails, {len(phones)} phones)",
         f"Company size score: {company_size}",
         f"Web presence: {'yes' if website else 'no'}",

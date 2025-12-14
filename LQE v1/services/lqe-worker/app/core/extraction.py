@@ -5,7 +5,7 @@ from typing import Iterable, List, Set
 
 from zipfile import ZipFile, BadZipFile
 
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 import pandas as pd
 
 from .config import settings

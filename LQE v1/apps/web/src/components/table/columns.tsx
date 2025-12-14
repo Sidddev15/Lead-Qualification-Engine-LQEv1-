@@ -2,14 +2,13 @@ import { ColumnDef } from "@tanstack/react-table";
 import { TierBadge } from "./TierBadge";
 import { ScoreBadge } from "./ScoreBadge";
 import { RowExpand } from "./RowExpand";
-import { Lead } from "./types";
 
-export const leadColumns: ColumnDef<Lead>[] = [
+export const leadColumns: ColumnDef<any>[] = [
   {
     accessorKey: "companyName",
     header: "Company",
     cell: ({ row }) => (
-      <span className="font-semibold">{row.original.companyName}</span>
+      <div className="font-medium">{row.original.companyName}</div>
     ),
   },
   {
@@ -25,18 +24,21 @@ export const leadColumns: ColumnDef<Lead>[] = [
   {
     accessorKey: "website",
     header: "Website",
-    cell: ({ row }) => (
-      <a
-        href={row.original.website}
-        className="text-blue-400 underline"
-        target="_blank"
-      >
-        {row.original.website}
-      </a>
-    ),
+    cell: ({ row }) =>
+      row.original.website ? (
+        <a
+          href={row.original.website}
+          target="_blank"
+          className="text-blue-400 underline"
+        >
+          {row.original.website}
+        </a>
+      ) : (
+        <span className="text-slate-500 text-xs">N/A</span>
+      ),
   },
   {
-    accessorKey: "expand",
+    id: "expand",
     header: "",
     cell: ({ row }) => <RowExpand lead={row.original} />,
   },

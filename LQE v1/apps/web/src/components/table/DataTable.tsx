@@ -15,6 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Fragment } from "react";
 
 interface Props<TData> {
   columns: ColumnDef<TData, any>[];
@@ -36,7 +37,12 @@ export function DataTable<TData>({ columns, data }: Props<TData>) {
             <TableRow key={hg.id} className="border-slate-700">
               {hg.headers.map((h) => (
                 <TableHead key={h.id} className="text-slate-300">
-                  {flexRender(h.column.columnDef.header, h.getContext()) as ReactNode}
+                  {
+                    flexRender(
+                      h.column.columnDef.header,
+                      h.getContext()
+                    ) as ReactNode
+                  }
                 </TableHead>
               ))}
             </TableRow>
@@ -45,13 +51,15 @@ export function DataTable<TData>({ columns, data }: Props<TData>) {
 
         <TableBody>
           {table.getRowModel().rows.map((row) => (
-            <TableRow key={row.id} className="border-slate-800">
-              {row.getVisibleCells().map((cell) => (
-                <TableCell key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext()) as ReactNode}
-                </TableCell>
-              ))}
-            </TableRow>
+            <Fragment key={row.id}>
+              <TableRow className="border-slate-800">
+                {row.getVisibleCells().map((cell) => (
+                  <TableCell key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </Fragment>
           ))}
         </TableBody>
       </Table>

@@ -47,7 +47,7 @@ export default function RunButton({
 
   return (
     <Button
-      className="border border-slate-400 rounded"
+      className="border border-slate-400 rounded mt-5"
       disabled={mutation.isPending}
       onClick={() => mutation.mutate()}
     >
